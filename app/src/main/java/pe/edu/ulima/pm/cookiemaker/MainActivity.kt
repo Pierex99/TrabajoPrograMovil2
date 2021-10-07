@@ -5,7 +5,7 @@ import android.os.Bundle
 import pe.edu.ulima.pm.cookiemaker.fragments.RecetasFragment
 import pe.edu.ulima.pm.cookiemaker.fragments.RegistrarRecetaFragment
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), RecetasFragment.OnMenuClicked {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -21,11 +21,17 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun cambiarRegistrarRecetasFragment(){
+    private fun changeRegistrarRecetasFragment(){
         val fragment = RegistrarRecetaFragment()
         val ft = supportFragmentManager.beginTransaction()
         ft.replace(R.id.flaContent, fragment)
         ft.addToBackStack(null)
         ft.commit()
+    }
+
+    override fun onClick(menuName: String) {
+        if (menuName == "registrarReceta"){
+            changeRegistrarRecetasFragment()
+        }
     }
 }

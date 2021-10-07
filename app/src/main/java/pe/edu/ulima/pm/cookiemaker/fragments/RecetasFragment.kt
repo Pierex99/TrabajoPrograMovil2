@@ -1,6 +1,8 @@
 package pe.edu.ulima.pm.cookiemaker.fragments
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +13,18 @@ import pe.edu.ulima.pm.cookiemaker.R
 
 
 class RecetasFragment : Fragment() {
+
+    interface OnMenuClicked {
+        fun onClick(menuName : String)
+    }
+
+    private var listener : OnMenuClicked? = null
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        listener = context as? OnMenuClicked
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +46,8 @@ class RecetasFragment : Fragment() {
         val btnAgregar : Button = view.findViewById(R.id.btnAgregar)
         btnAgregar.setOnClickListener{
             //cambiar a fragment RegistrarRecetasFragment
-            (activity as MainActivity).cambiarRegistrarRecetasFragment()
+            //(activity as MainActivity).cambiarRegistrarRecetaFragment()
+            listener?.onClick("registrarReceta")
         }
     }
 }
