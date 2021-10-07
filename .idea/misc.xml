@@ -3,12 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/bruno/AndroidStudioProjects/CookieMaker/app/src/main/res/layout/activity_listado_recetas.xml" value="0.1796875" />
+        <entry key="..\:/Users/Piero/Desktop/Clases_UL/2022-2/PrograMovil/proyecto2/CookieMaker/app/src/main/res/layout/activity_listado_recetas.xml" value="0.20018115942028986" />
+        <entry key="..\:/Users/Piero/Desktop/Clases_UL/2022-2/PrograMovil/proyecto2/CookieMaker/app/src/main/res/layout/activity_main.xml" value="0.20018115942028986" />
+        <entry key="..\:/Users/Piero/Desktop/Clases_UL/2022-2/PrograMovil/proyecto2/CookieMaker/app/src/main/res/layout/fragment_recetas.xml" value="0.22" />
+        <entry key="..\:/Users/Piero/Desktop/Clases_UL/2022-2/PrograMovil/proyecto2/CookieMaker/app/src/main/res/layout/fragment_registrar_recetas.xml" value="0.20018115942028986" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/CookieMaker/app/src/main/res/layout/activity_listado_recetas.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/CookieMaker/app/src/main/res/layout/activity_main.xml" value="0.22" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
