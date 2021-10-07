@@ -8,8 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.recyclerview.widget.RecyclerView
 import pe.edu.ulima.pm.cookiemaker.MainActivity
 import pe.edu.ulima.pm.cookiemaker.R
+import pe.edu.ulima.pm.cookiemaker.adapter.RecetaListAdapter
+import pe.edu.ulima.pm.cookiemaker.model.RecetasManager
 
 
 class RecetasFragment : Fragment() {
@@ -25,11 +28,12 @@ class RecetasFragment : Fragment() {
 
         listener = context as? OnMenuClicked
     }
-
+    /*
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
     }
+    */
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,7 +45,6 @@ class RecetasFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         //obtener boton agregar
         val btnAgregar : Button = view.findViewById(R.id.btnAgregar)
         btnAgregar.setOnClickListener{
@@ -49,5 +52,10 @@ class RecetasFragment : Fragment() {
             //(activity as MainActivity).cambiarRegistrarRecetaFragment()
             listener?.onClick("registrarReceta")
         }
+
+        //obtener recycler view
+        val rviRecetas = view.findViewById<RecyclerView>(R.id.rviRecetas)
+        //adapter
+        rviRecetas.adapter = RecetaListAdapter(RecetasManager().getRecetas())
     }
 }
