@@ -2,10 +2,8 @@ package pe.edu.ulima.pm.cookiemaker
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.Toast
 import pe.edu.ulima.pm.cookiemaker.fragments.RecetasFragment
-import pe.edu.ulima.pm.cookiemaker.fragments.RegistrarRecetasFragment
+import pe.edu.ulima.pm.cookiemaker.fragments.RegistrarRecetaFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,10 +22,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun cambiarRegistrarRecetasFragment(){
-        val fragment = RegistrarRecetasFragment()
+        val fragment = RegistrarRecetaFragment()
         val ft = supportFragmentManager.beginTransaction()
         ft.replace(R.id.flaContent, fragment)
-
+        ft.addToBackStack(null)
         ft.commit()
     }
 }

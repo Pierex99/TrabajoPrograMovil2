@@ -28,19 +28,19 @@
     <EditText
         android:id="@+id/editTextTextPersonName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#FFFFFF"
+        android:layout_height="48dp"
+        android:background="@drawable/borde_redondo"
         android:backgroundTint="#F8F2F2"
         android:ems="10"
+        android:hint="Ingresa tu nombre"
         android:inputType="textPersonName"
         android:textAlignment="center"
         android:textColor="#706C6C"
-        android:textSize="24sp"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Ingresa tu nombre" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnIngresar"
