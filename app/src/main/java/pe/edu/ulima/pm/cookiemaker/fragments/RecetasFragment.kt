@@ -12,22 +12,31 @@ import androidx.recyclerview.widget.RecyclerView
 import pe.edu.ulima.pm.cookiemaker.MainActivity
 import pe.edu.ulima.pm.cookiemaker.R
 import pe.edu.ulima.pm.cookiemaker.adapter.RecetaListAdapter
+import pe.edu.ulima.pm.cookiemaker.model.Receta
 import pe.edu.ulima.pm.cookiemaker.model.RecetasManager
 
 
 class RecetasFragment : Fragment() {
-
+    //interfaz para poder reciclar el fragment y cualquier click en cualquiera de sus componentes
     interface OnMenuClicked {
         fun onClick(menuName : String)
     }
-
+    //listener para el click
     private var listener : OnMenuClicked? = null
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
         listener = context as? OnMenuClicked
+        listenerItem = context as? OnRecetaSelectedListener
     }
+
+    interface  OnRecetaSelectedListener {
+        fun onSelect(receta : Receta)
+    }
+
+    private var listenerItem  : OnRecetaSelectedListener? = null
+
     /*
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,6 +65,12 @@ class RecetasFragment : Fragment() {
         //obtener recycler view
         val rviRecetas = view.findViewById<RecyclerView>(R.id.rviRecetas)
         //adapter
-        rviRecetas.adapter = RecetaListAdapter(RecetasManager().getRecetas())
+        rviRecetas.adapter = RecetaListAdapter(
+            RecetasManager().getRecetas(),
+            this
+        ) { receta: Receta ->
+            Log.i("RecetasFragment", receta.name)
+            listenerItem?.onSelect(receta)
+        }
     }
 }
