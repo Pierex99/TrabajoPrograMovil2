@@ -10,6 +10,7 @@ import pe.edu.ulima.pm.cookiemaker.fragments.SeleccionarIngredienteFragment
 import pe.edu.ulima.pm.cookiemaker.fragments.VisualizarRecetaFragment
 import pe.edu.ulima.pm.cookiemaker.model.Ingrediente
 import pe.edu.ulima.pm.cookiemaker.model.Receta
+import pe.edu.ulima.pm.cookiemaker.model.RecetasManager
 
 class MainActivity : AppCompatActivity(), RecetasFragment.OnMenuClicked,
         RecetasFragment.OnRecetaSelectedListener,
@@ -103,6 +104,10 @@ class MainActivity : AppCompatActivity(), RecetasFragment.OnMenuClicked,
         bundle.putString("nameReceta", dato)
 
         //agregar receta a vista addReceta()
+        var nombre = intent.getBundleExtra("data")?.getString("nameUser")
+        println("nombre = "+nombre)
+        var newReceta = Receta(5, dato, nombre.toString(), R.drawable.galletas1)
+        RecetasManager().getInstance().addReceta(newReceta)
 
         val fragment = fragments[1]
         val ft = supportFragmentManager.beginTransaction()
@@ -111,6 +116,7 @@ class MainActivity : AppCompatActivity(), RecetasFragment.OnMenuClicked,
 
         ft.replace(R.id.flaContent, RecetasFragment())
         //terminar transaccion
+        ft.addToBackStack(null)
         ft.commit()
     }
 

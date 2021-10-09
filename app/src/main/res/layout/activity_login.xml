@@ -21,12 +21,12 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="#191919"
         android:textSize="80sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtUsuario"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/txtUsuario"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:background="@drawable/borde_redondo"
@@ -50,8 +50,8 @@
         android:text="Ingresar"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName" />
+        app:layout_constraintEnd_toEndOf="@+id/txtUsuario"
+        app:layout_constraintStart_toStartOf="@+id/txtUsuario" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

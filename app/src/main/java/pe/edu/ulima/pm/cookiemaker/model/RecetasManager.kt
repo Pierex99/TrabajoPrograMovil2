@@ -13,6 +13,12 @@ class RecetasManager {
         mIngredientes.add(Ingrediente("Harina"))
         mIngredientes.add(Ingrediente("Vainilla"))
         mIngredientes.add(Ingrediente("Polvo de Hornear"))
+
+        mRecetas.add(Receta(1, "Galletas con chocochispas","Piero", R.drawable.galletas1))
+        mRecetas.add(Receta(2, "Galletas de mantequilla","Bruno", R.drawable.galletas2))
+        mRecetas.add(Receta(3, "Galletas con mermelada","Juan", R.drawable.galletas3))
+        mRecetas.add(Receta(4, "Choco-galletas felices","Paloma", R.drawable.galletas4))
+
     }
 
     companion object {
@@ -27,10 +33,6 @@ class RecetasManager {
     }
 
     fun getRecetas(): List<Receta> {
-        mRecetas.add(Receta(1, "Galletas con chocochispas","Piero", R.drawable.galletas1))
-        mRecetas.add(Receta(2, "Galletas de mantequilla","Bruno", R.drawable.galletas2))
-        mRecetas.add(Receta(3, "Galletas con mermelada","Juan", R.drawable.galletas3))
-        mRecetas.add(Receta(4, "Choco-galletas felices","Paloma", R.drawable.galletas4))
 
         return mRecetas
     }

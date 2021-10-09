@@ -53,15 +53,17 @@ class RecetasFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         //añadir receta (si hay en arguments)
+
+        /*
         if (arguments != null) {
             val nameReceta = requireArguments().getString("nameReceta")
-
+            println("prueba2 = "+nameReceta)
             //addReceta
             var newReceta = Receta(5, nameReceta,"Piero", R.drawable.galletas1)
             RecetasManager().getInstance().addReceta(newReceta)
         }
+         */
 
         //obtener boton agregar
         val btnAgregar : Button = view.findViewById(R.id.btnAgregar)
