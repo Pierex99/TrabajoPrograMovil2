@@ -18,12 +18,14 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rviRecetas"
         android:layout_width="match_parent"
-        android:layout_height="673dp"
+        android:layout_height="0dp"
         android:layout_marginTop="10dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnAgregar"
         tools:itemCount="5"
-        tools:layout_editor_absoluteX="-35dp"
         tools:listitem="@layout/item_receta" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
